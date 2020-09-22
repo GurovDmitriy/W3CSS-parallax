@@ -196,6 +196,14 @@ module.exports = function (grunt) {
       },
     },
 
+    html_validator: {
+      validation: {
+          options: {
+              directories: ['source/*.html']
+          }
+      }
+    },
+
     realFavicon: {
       favicons: {
         src: 'TODO: Path to your master picture',
