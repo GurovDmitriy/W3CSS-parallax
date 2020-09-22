@@ -324,6 +324,7 @@ template {
   --colorBlack: #000000;
   --colorGrey: #777777;
   --colorDarkGrey: #616161;
+  --colorOverlay: rgba(0, 0, 0, 0.8);
 }
 /* переменные less */
 /* переменные вьюпорта */
@@ -379,7 +380,11 @@ button:focus:not(:focus-visible) {
 .js-focus-visible .focus-visible {
   outline: 2px solid var(--colorBlack);
 }
-.js-focus-visible button.focus-visible {
+.js-focus-visible footer .focus-visible {
+  outline: 2px solid var(--colorWhite);
+}
+.js-focus-visible button.focus-visible,
+.js-focus-visible footer a.w3-button.focus-visible {
   outline-offset: 2px;
 }
 /* сслыка пропуска меню */
@@ -435,9 +440,6 @@ nav input {
   line-height: 1.5;
   border: none;
 }
-nav button {
-  min-height: 38px;
-}
 .no-webp .usr-header__caption {
   min-height: 400px;
   height: 100vh;
@@ -457,6 +459,247 @@ nav button {
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--colorDarkGrey);
+}
+.usr-nav {
+  min-height: 52px;
+}
+.usr-nav .w3-mobile {
+  width: 100%;
+}
+@media (min-width: 962px) {
+  .usr-nav .w3-mobile {
+    width: auto;
+  }
+}
+.usr-nav .w3-button {
+  text-align: left;
+}
+@media (min-width: 962px) {
+  .usr-nav .w3-button {
+    text-align: center;
+  }
+}
+.usr-nav__menu--hidden {
+  display: none;
+}
+@media (min-width: 962px) {
+  .usr-nav__menu--hidden {
+    display: block;
+  }
+}
+.usr-nav button.w3-button {
+  min-height: 38px;
+}
+.usr-burger {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  display: block;
+  width: 40px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  background-color: transparent;
+}
+.usr-burger::before,
+.usr-burger::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--colorBlack);
+}
+.usr-burger::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.usr-burger::after {
+  top: 50%;
+  right: 0;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+@media (min-width: 962px) {
+  .usr-burger {
+    display: none;
+  }
+}
+.usr-burger--open {
+  animation-name: burgerOpen;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.usr-burger--open::after {
+  animation-name: burgerAfterOpen;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.usr-burger--open::before {
+  animation-name: burgerBeforeOpen;
+  animation-duration: 0.5s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.usr-burger--close {
+  animation-name: burgerClose;
+  animation-duration: 0.2s;
+  animation-delay: 0.5s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+.usr-burger--close::after {
+  animation-name: burgerAfterClose;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+.usr-burger--close::before {
+  animation-name: burgerBeforeClose;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes burgerOpen {
+  0% {
+    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  }
+  100% {
+    box-shadow: inset 0 -2px 0 0 transparent;
+  }
+}
+@keyframes burgerAfterOpen {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  25% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  50% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  50% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+  }
+}
+@keyframes burgerBeforeOpen {
+  0% {
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  50% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+  }
+}
+@keyframes burgerClose {
+  0% {
+    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  }
+  100% {
+    box-shadow: inset 0 -2px 0 0 transparent;
+  }
+}
+@keyframes burgerAfterClose {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  25% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  50% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  50% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    width: 100%;
+    transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+  }
+}
+@keyframes burgerBeforeClose {
+  0% {
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  50% {
+    top: 0;
+    transform: translate(0, 0) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    top: 50%;
+    transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+  }
 }
 .usr-progress__item:nth-of-type(1) > div {
   width: 90%;
@@ -486,6 +729,40 @@ nav button {
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--colorDarkGrey);
+}
+.usr-gallery {
+  position: relative;
+}
+.usr-gallery .w3-image:hover {
+  cursor: pointer;
+}
+.usr-gallery .w3-image--show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.usr-gallery .w3-image--show:hover {
+  opacity: 1;
+}
+@media (min-width: 601px) {
+  .usr-gallery .w3-image--show {
+    width: 70%;
+  }
+}
+@media (min-width: 1100px) {
+  .usr-gallery .w3-image--show {
+    width: 800px;
+  }
+}
+.usr-gallery__overlay {
+  display: block;
+  background-color: var(--colorOverlay);
+}
+.usr-gallery__overlay--hidden {
+  display: none;
 }
 .no-webp .usr-contact__caption {
   min-height: 400px;

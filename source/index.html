@@ -44,7 +44,7 @@
 
   <header class="usr-header">
 
-    <div class="w3-display-container w3-padding-64 w3-opacity-min usr-header__caption">
+    <div class="w3-display-container w3-padding-64 w3-opacity-min usr-header__caption" id="home">
 
       <div class="w3-content w3-container w3-display-middle w3-center">
         <h1 class="w3-tag w3-xxlarge w3-wide w3-animate-opacity">Parallax</h1>
@@ -54,22 +54,23 @@
 
     <a class="skip-link" href="#main">skip-link</a>
 
-    <nav class="w3-top">
+    <nav class="w3-top usr-nav">
 
       <h2 class="visually-hidden">Navigation</h2>
 
-      <ul class="w3-bar">
-        <li class="w3-bar-item"><a class="w3-button" href="#home"><span class="fa fa-home w3-margin-right"></span> Home</a></li>
-        <li class="w3-bar-item"><a class="w3-button" href="#about"><span class="fa fa-user w3-margin-right"></span> About</a></li>
-        <li class="w3-bar-item"><a class="w3-button" href="#portfolio"><span class="fa fa-th w3-margin-right"></span> Portfolio</a></li>
-        <li class="w3-bar-item"><a class="w3-button" href="#contact"><span class="fa fa-envelope w3-margin-right"></span> Contact</a></li>
-        <li class="w3-bar-item w3-right">
+      <button class="usr-burger" type="button"><span class="visually-hidden">Menu</span></button>
+
+      <ul class="w3-bar usr-nav__menu usr-nav__menu--hidden">
+        <li class="w3-bar-item w3-mobile"><a class="w3-button w3-block" href="#home"><span class="fa fa-fw fa-home w3-margin-right"></span> Home</a></li>
+        <li class="w3-bar-item w3-mobile"><a class="w3-button w3-block" href="#about"><span class="fa fa-fw fa-user w3-margin-right"></span> About</a></li>
+        <li class="w3-bar-item w3-mobile"><a class="w3-button w3-block" href="#portfolio"><span class="fa fa-fw fa-th w3-margin-right"></span> Portfolio</a></li>
+        <li class="w3-bar-item w3-mobile"><a class="w3-button w3-block" href="#contact"><span class="fa fa-fw fa-envelope w3-margin-right"></span> Contact</a></li>
+        <li class="w3-bar-item w3-mobile w3-right">
           <form action="#" method="get">
             <label for="search"><span class="visually-hidden">Search</span></label>
-            <input class="w3-button w3-transparent" id="search" type="search" name="search" placeholder="Search">
-            <button class="w3-button fa fa-search" type="submit"><span class="visually-hidden">Search</span></button>
+            <input class="w3-button w3-mobile w3-transparent" id="search" type="search" name="search" placeholder="Search">
+            <button class="w3-button w3-mobile fa fa-search" type="submit"><span class="visually-hidden">Search</span></button>
           </form>
-
         </li>
       </ul>
 
@@ -79,7 +80,7 @@
 
   <main id="main">
 
-    <section>
+    <section id="about">
 
       <div class="w3-content w3-container w3-padding-32">
         <h2  class="w3-center" tabindex="0">About me</h2>
@@ -153,7 +154,7 @@
 
     </section>
 
-    <section class="usr-portfolio">
+    <section class="usr-portfolio" id="portfolio">
 
       <div class="w3-display-container w3-padding-64 w3-opacity-min usr-portfolio__caption">
 
@@ -165,14 +166,16 @@
 
       <div class="w3-content w3-container w3-padding-32 w3-center">
 
-        <h3>My work</h3>
+        <h3 tabindex="0">My work</h3>
         <p>Targeted optimism gender rights; thought leadership white paper. Strategy the.</p>
 
       </div>
 
-      <div class="w3-content">
+      <div class="w3-content usr-gallery">
 
-        <h3 class="visually-hidden" tabindex="0">Gallery</h3>
+        <div class="w3-overlay w3-animate-opacity usr-gallery__overlay usr-gallery__overlay--hidden"></div>
+
+        <h3 class="visually-hidden">Gallery</h3>
 
         <div class="w3-row-padding">
 
@@ -181,49 +184,39 @@
               <picture>
                 <source type="image/webp"
                         srcset="image/min/p1.webp">
-
-                <img class="w3-image w3-margin-bottom" src="image/min/p1.jpg" width="400" height="300" alt="image-gallery">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p1.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
               </picture>
             </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p2.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p2.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p2.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p2.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p3.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p3.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p3.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p3.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p4.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p4.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p4.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p4.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
         </div>
@@ -231,55 +224,43 @@
         <div class="w3-row-padding">
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p5.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p5.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p5.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p5.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p6.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p6.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p6.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p6.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p7.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p7.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p7.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p7.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
           <div class="w3-col m6 l3">
-            <a href="#">
-              <figure>
-                <picture>
-                  <source type="image/webp"
-                          srcset="image/min/p8.webp">
-
-                  <img class="w3-image w3-margin-bottom" src="image/min/p8.jpg" width="400" height="300" alt="image-gallery">
-                </picture>
-              </figure>
-            </a>
+            <figure>
+              <picture>
+                <source type="image/webp"
+                        srcset="image/min/p8.webp">
+               <img class="w3-image w3-margin-bottom w3-hover-opacity" src="image/min/p8.jpg" width="400" height="300" alt="image-gallery" tabindex="0">
+              </picture>
+            </figure>
           </div>
 
         </div>
@@ -292,7 +273,7 @@
 
     </section>
 
-    <section class="usr-contact">
+    <section class="usr-contact" id="contact">
 
       <div class="w3-display-container w3-padding-64 w3-opacity-min usr-contact__caption">
         <div class="w3-display-middle w3container w3-center w3-text-white w3-wide">
@@ -317,7 +298,7 @@
         </div>
 
         <div class="w3-col m6">
-          <address class="w3-large"><span class="fa fa-fw fa-map-marker"></span> Chicago, US</address>
+          <address class="w3-large" tabindex="0"><span class="fa fa-fw fa-map-marker"></span> Chicago, US</address>
           <p><a class="w3-large" href="tel:+00151515"><span class="fa fa-fw fa-phone"></span> Phone: +00 151515</a></p>
           <p><a class="w3-large" href="mailto:mail@mail.com"><span class="fa fa-fw fa-envelope"></span> Email: mail@gmail.com</a></p>
 
@@ -391,6 +372,7 @@
 
   </footer>
 
+  <script src="js/default.js"       async></script>
   <script src="js/focus-visible.js" async></script>
 
 </body>

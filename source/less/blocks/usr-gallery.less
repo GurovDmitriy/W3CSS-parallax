@@ -1,0 +1,42 @@
+.usr-gallery {
+  position: relative;
+}
+
+.usr-gallery .w3-image {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.usr-gallery .w3-image--show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media (min-width: @tabletWidth) {
+    width: 70%;
+  }
+
+  @media (min-width: @desktopWidth) {
+    width: 800px;
+  }
+}
+
+.usr-gallery__overlay {
+  display: block;
+
+  background-color: var(--colorOverlay);
+}
+
+.usr-gallery__overlay--hidden {
+  display: none;
+}

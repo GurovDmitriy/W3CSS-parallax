@@ -58,7 +58,12 @@ button:focus:not(:focus-visible) {
   .focusCustom(var(--colorBlack));
 }
 
-.js-focus-visible button.focus-visible {
+.js-focus-visible footer .focus-visible {
+  .focusCustom(var(--colorWhite));
+}
+
+.js-focus-visible button.focus-visible,
+.js-focus-visible footer a.w3-button.focus-visible {
   outline-offset: 2px;
 }
 
@@ -130,8 +135,4 @@ nav input {
 
   line-height: 1.5;
   border: none;
-}
-
-nav button {
-  min-height: 38px;
 }
