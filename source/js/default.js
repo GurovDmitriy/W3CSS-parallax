@@ -29,6 +29,21 @@ for (let i = 0; i < images.length; i++) {
       images[i].classList.remove('w3-image--show');
     }
   };
+
+  images[i].onkeyup = function (e) {
+    if (e.keyCode === 27) {
+      overlay.classList.add('usr-gallery__overlay--hidden');
+      images[i].classList.remove('w3-image--show');
+    } else if (e.keyCode === 13) {
+      overlay.classList.remove('usr-gallery__overlay--hidden');
+      images[i].classList.add('w3-image--show');
+    }
+  }
+
+  images[i].onblur = function () {
+    overlay.classList.add('usr-gallery__overlay--hidden');
+    images[i].classList.remove('w3-image--show');
+  }
 }
 
 // Change style of navbar on scroll
@@ -69,7 +84,7 @@ const observer = new IntersectionObserver( entries => {
   });
 }, options);
 // Observe all sections that have an `id` applied
-let sectionsSec = document.querySelectorAll('section[id]');
+let sectionsSec = document.querySelectorAll('div[id]');
 
 sectionsSec.forEach(section => {
   observer.observe(section);
