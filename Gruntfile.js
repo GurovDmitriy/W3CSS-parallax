@@ -26,7 +26,7 @@ module.exports = function (grunt) {
       },
       styleWatchDev: {
         files: ['source/less/**/*.less'],
-        tasks: ['less', 'clean:buildCleanStyleDev', 'copy:buildStyleCopy', 'postcss', 'csso'],
+        tasks: ['less', 'clean:buildCleanStyleDev', 'copy:buildStyleCopy', 'postcss', 'cssmin'],
       },
       jsWatchDev: {
         files: ['source/js/*/*.js'],
@@ -89,6 +89,17 @@ module.exports = function (grunt) {
       },
     },
 
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'build/css/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'build/css/',
+        }]
+      }
+    },
+
     concat: {
       options: {
         separator: '\n',
@@ -136,7 +147,7 @@ module.exports = function (grunt) {
     cwebp: {
       imagesWebp: {
         options: {
-          q: 90,
+          q: 70,
         },
         files: [{
           expand: true,
@@ -198,9 +209,9 @@ module.exports = function (grunt) {
 
     html_validator: {
       validation: {
-          options: {
-              directories: ['source/*.html']
-          }
+        options: {
+          directories: ['source/*.html']
+        }
       }
     },
 
@@ -296,9 +307,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'source',
           src: [
+            '*.xml',
             '*.html',
             'fonts/woff2/*',
             'image/min/*',
+            'image/favicon/*',
             'css/style.css',
             'js/*.js',
           ],
@@ -351,7 +364,7 @@ module.exports = function (grunt) {
     'clean:buildClean',
     'copy:buildCopy',
     'postcss',
-    'csso',
+    'cssmin',
     'uglify',
     'htmlmin',
     'browserSync:serverSyncDev',
@@ -370,7 +383,7 @@ module.exports = function (grunt) {
     'clean:buildClean',
     'copy:buildCopy',
     'postcss',
-    'csso',
+    'cssmin',
     'uglify',
     'htmlmin',
   ]);
