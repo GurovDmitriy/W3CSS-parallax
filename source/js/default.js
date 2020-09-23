@@ -1,5 +1,4 @@
 'use strict';
-
 // button toggle menu
 const burger = document.querySelector('.usr-burger');
 const menu = document.querySelector('.usr-nav__menu');
@@ -12,7 +11,7 @@ burger.onclick = function () {
   }
 
   menu.classList.toggle('usr-nav__menu--hidden');
-}
+};
 
 // Modal Image Gallery
 const gallery = document.querySelector('.usr-gallery');
@@ -27,7 +26,7 @@ for (let i = 0; i < images.length; i++) {
     overlay.onclick = function () {
       overlay.classList.add('usr-gallery__overlay--hidden');
       images[i].classList.remove('w3-image--show');
-    }
+    };
   };
 
   images[i].onkeyup = function (e) {
@@ -38,54 +37,54 @@ for (let i = 0; i < images.length; i++) {
       overlay.classList.remove('usr-gallery__overlay--hidden');
       images[i].classList.add('w3-image--show');
     }
-  }
+  };
 
   images[i].onblur = function () {
     overlay.classList.add('usr-gallery__overlay--hidden');
     images[i].classList.remove('w3-image--show');
-  }
+  };
 }
 
 // Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
+window.onscroll = function () { myFunction(); };
 function myFunction() {
-  var navbar = document.querySelector(".usr-nav");
+  const navbar = document.querySelector('.usr-nav');
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      navbar.className = "w3-top" + " w3-card" + " w3-white" + " usr-nav";
-      menu.classList.add('w3-animate-top');
+    navbar.className = 'w3-top' + ' w3-card' + ' w3-white' + ' usr-nav';
+    menu.classList.add('w3-animate-top');
   } else {
-      navbar.className = navbar.className.replace("w3-top w3-card w3-white usr-nav", "w3-top usr-nav");
-      menu.classList.remove('w3-animate-top');
+    navbar.className = navbar.className.replace('w3-top w3-card w3-white usr-nav', 'w3-top usr-nav');
+    menu.classList.remove('w3-animate-top');
   }
 }
 
 // set the observer options
-let options = {
+const options = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.5
-}
+  threshold: 0.5,
+};
 
 // create observer
-const observer = new IntersectionObserver( entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
       // add an observed class to the section
       entry.target.classList.add('observed');
       // check the section's id
-      document.querySelectorAll('nav a').forEach( link => {
-        if(link.hash === `#${entry.target.id}`) {
+      document.querySelectorAll('nav a').forEach((link) => {
+        if (link.hash === `#${entry.target.id}`) {
           link.classList.add('w3-light-grey');
         } else {
           link.classList.remove('w3-light-grey');
         }
       });
-    };
+    }
   });
 }, options);
 // Observe all sections that have an `id` applied
-let sectionsSec = document.querySelectorAll('div[id]');
+const sectionsSec = document.querySelectorAll('div[id]');
 
-sectionsSec.forEach(section => {
+sectionsSec.forEach((section) => {
   observer.observe(section);
 });
