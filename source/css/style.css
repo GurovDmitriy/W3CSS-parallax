@@ -448,7 +448,7 @@ nav input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-color: var(--colorDarkGrey);
 }
 .webp .usr-header__caption {
@@ -718,7 +718,7 @@ nav input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-color: var(--colorDarkGrey);
 }
 .webp .usr-portfolio__caption {
@@ -772,7 +772,7 @@ nav input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-color: var(--colorDarkGrey);
 }
 .webp .usr-contact__caption {
