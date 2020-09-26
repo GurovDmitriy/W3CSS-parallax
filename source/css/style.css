@@ -750,12 +750,12 @@ nav input {
 }
 @media (min-width: 601px) {
   .usr-gallery .w3-image--show {
-    width: 70%;
+    width: 70vw;
   }
 }
 @media (min-width: 1100px) {
   .usr-gallery .w3-image--show {
-    width: 800px;
+    width: 80vw;
   }
 }
 .usr-gallery__overlay {
