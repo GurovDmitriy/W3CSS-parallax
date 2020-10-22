@@ -40,7 +40,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -74,7 +75,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 /**
@@ -206,7 +208,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -237,7 +240,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -305,14 +309,16 @@ template {
 }
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/woff2/Lato-Regular.woff2') format('woff2');
+  src: url('../font/woff2/Lato-Regular.woff2') format('woff2');
+  src: url('../font/woff/Lato-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Lato';
-  src: url('../fonts/woff2/Lato-Bold.woff2') format('woff2');
+  src: url('../font/woff2/Lato-Bold.woff2') format('woff2');
+  src: url('../font/woff/Lato-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -341,13 +347,15 @@ body {
   padding: 0;
 }
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   scroll-behavior: smooth;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 body {
   min-width: 280px;
@@ -444,7 +452,7 @@ nav input {
 .no-webp .usr-header__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax1.jpg');
+  background-image: url('../image/parallax1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -454,7 +462,7 @@ nav input {
 .webp .usr-header__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax1.webp');
+  background-image: url('../image/parallax1.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -501,7 +509,8 @@ nav input {
   height: 20px;
   padding: 0;
   border: none;
-  box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  -webkit-box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+          box-shadow: inset 0 -2px 0 0 var(--colorBlack);
   background-color: transparent;
 }
 .usr-burger::before,
@@ -521,7 +530,8 @@ nav input {
   top: 50%;
   right: 0;
   width: 100%;
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 @media (min-width: 962px) {
   .usr-burger {
@@ -529,53 +539,127 @@ nav input {
   }
 }
 .usr-burger--open {
-  animation-name: burgerOpen;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: burgerOpen;
+          animation-name: burgerOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .usr-burger--open::after {
-  animation-name: burgerAfterOpen;
-  animation-duration: 0.5s;
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: burgerAfterOpen;
+          animation-name: burgerAfterOpen;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .usr-burger--open::before {
-  animation-name: burgerBeforeOpen;
-  animation-duration: 0.5s;
-  animation-delay: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: burgerBeforeOpen;
+          animation-name: burgerBeforeOpen;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .usr-burger--close {
-  animation-name: burgerClose;
-  animation-duration: 0.2s;
-  animation-delay: 0.5s;
+  -webkit-animation-name: burgerClose;
+          animation-name: burgerClose;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
   animation-direction: reverse;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .usr-burger--close::after {
-  animation-name: burgerAfterClose;
-  animation-duration: 0.5s;
+  -webkit-animation-name: burgerAfterClose;
+          animation-name: burgerAfterClose;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   animation-direction: reverse;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .usr-burger--close::before {
-  animation-name: burgerBeforeClose;
-  animation-duration: 0.5s;
+  -webkit-animation-name: burgerBeforeClose;
+          animation-name: burgerBeforeClose;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   animation-direction: reverse;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes burgerOpen {
+  0% {
+    -webkit-box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+            box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  }
+  100% {
+    -webkit-box-shadow: inset 0 -2px 0 0 transparent;
+            box-shadow: inset 0 -2px 0 0 transparent;
+  }
 }
 @keyframes burgerOpen {
   0% {
-    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+    -webkit-box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+            box-shadow: inset 0 -2px 0 0 var(--colorBlack);
   }
   100% {
-    box-shadow: inset 0 -2px 0 0 transparent;
+    -webkit-box-shadow: inset 0 -2px 0 0 transparent;
+            box-shadow: inset 0 -2px 0 0 transparent;
+  }
+}
+@-webkit-keyframes burgerAfterOpen {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  25% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  50% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  50% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
   }
 }
 @keyframes burgerAfterOpen {
@@ -584,64 +668,160 @@ nav input {
   }
   25% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
   }
   25% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
   }
   50% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   50% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   75% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   100% {
     width: 100%;
-    transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+  }
+}
+@-webkit-keyframes burgerBeforeOpen {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(0.6);
+            transform: translate(0, 0) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
   }
 }
 @keyframes burgerBeforeOpen {
   0% {
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   25% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   25% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   50% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(0.6);
+            transform: translate(0, 0) rotate(0) scaleX(0.6);
   }
   75% {
     top: 50%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   75% {
     top: 50%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   100% {
     top: 50%;
-    transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+  }
+}
+@-webkit-keyframes burgerClose {
+  0% {
+    -webkit-box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+            box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+  }
+  100% {
+    -webkit-box-shadow: inset 0 -2px 0 0 transparent;
+            box-shadow: inset 0 -2px 0 0 transparent;
   }
 }
 @keyframes burgerClose {
   0% {
-    box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+    -webkit-box-shadow: inset 0 -2px 0 0 var(--colorBlack);
+            box-shadow: inset 0 -2px 0 0 var(--colorBlack);
   }
   100% {
-    box-shadow: inset 0 -2px 0 0 transparent;
+    -webkit-box-shadow: inset 0 -2px 0 0 transparent;
+            box-shadow: inset 0 -2px 0 0 transparent;
+  }
+}
+@-webkit-keyframes burgerAfterClose {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  25% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
+  }
+  50% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  50% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    width: 100%;
+    -webkit-transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
   }
 }
 @keyframes burgerAfterClose {
@@ -650,56 +830,105 @@ nav input {
   }
   25% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
   }
   25% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(1);
+            transform: translate(0, -50%) rotate(0) scaleX(1);
   }
   50% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   50% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   75% {
     width: 100%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   100% {
     width: 100%;
-    transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(45deg) scaleX(0.6);
+  }
+}
+@-webkit-keyframes burgerBeforeClose {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  25% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(0.6);
+            transform: translate(0, 0) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  75% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
+  }
+  100% {
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
   }
 }
 @keyframes burgerBeforeClose {
   0% {
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   25% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   25% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(1);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(1);
+            transform: translate(0, 0) rotate(0) scaleX(1);
   }
   50% {
     top: 0;
-    transform: translate(0, 0) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, 0) rotate(0) scaleX(0.6);
+            transform: translate(0, 0) rotate(0) scaleX(0.6);
   }
   75% {
     top: 50%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   75% {
     top: 50%;
-    transform: translate(0, -50%) rotate(0) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(0) scaleX(0.6);
+            transform: translate(0, -50%) rotate(0) scaleX(0.6);
   }
   100% {
     top: 50%;
-    transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+    -webkit-transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
+            transform: translate(0, -50%) rotate(-45deg) scaleX(0.6);
   }
 }
 .usr-progress__item:nth-of-type(1) > div {
@@ -714,7 +943,7 @@ nav input {
 .no-webp .usr-portfolio__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax2.jpg');
+  background-image: url('../image/parallax2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -724,7 +953,7 @@ nav input {
 .webp .usr-portfolio__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax2.webp');
+  background-image: url('../image/parallax2.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -743,7 +972,8 @@ nav input {
   left: 50%;
   z-index: 11;
   width: 100%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .usr-gallery .w3-image--show:hover {
   opacity: 1;
@@ -768,7 +998,7 @@ nav input {
 .no-webp .usr-contact__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax3.jpg');
+  background-image: url('../image/parallax3.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -778,7 +1008,7 @@ nav input {
 .webp .usr-contact__caption {
   min-height: 400px;
   height: 100vh;
-  background-image: url('../image/min/parallax3.webp');
+  background-image: url('../image/parallax3.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -788,3 +1018,4 @@ nav input {
 .usr-contact a {
   text-decoration: none;
 }
+/*# sourceMappingURL=/css/style.css.map */
